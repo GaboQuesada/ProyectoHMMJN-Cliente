@@ -1,11 +1,13 @@
 
 package ac.cr.una.frontend;
 
+import ac.cr.una.frontend.view.PacientesView;
+import ac.cr.una.frontend.view.UsuarioView;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.io.IOException;
 import javax.swing.SwingUtilities;
-import ac.cr.una.frontend.view.UsuarioView;
+
 
 public class FrontEndExample {
 
@@ -30,6 +32,7 @@ public class FrontEndExample {
 
   
     public static void createAndShowGUI() throws Exception {
-       new UsuarioView().setVisible(true);
+       new PacientesView().setVisible(true);
+     //  new UsuarioView().setVisible(true);
     }
 }
