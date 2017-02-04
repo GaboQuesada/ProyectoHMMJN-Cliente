@@ -12,6 +12,9 @@ import com.sun.jersey.api.client.WebResource;
 import javax.ws.rs.core.MediaType;
 
 public class ObservacionesService {
+
+    public ObservacionesService() {
+    }
     
     
      public Object[][] loadStudentsObjWrapper(int id) throws JsonGenerationException, JsonMappingException, IOException, Exception {

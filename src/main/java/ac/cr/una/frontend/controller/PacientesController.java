@@ -66,7 +66,7 @@ public class PacientesController implements ActionListener {
         if(btnConsultorios.equals(e.getSource())){
         
             try {
-                new ConsultoriosView().setVisible(true);
+                abrircitas();
             } catch (Exception ex) {
                 Logger.getLogger(PacientesController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -186,6 +186,20 @@ public class PacientesController implements ActionListener {
         InfoPacientes nuevo = new InfoPacientes(updateRegistro);
         nuevo.setVisible(true);
     
+    }
+    
+    public void abrircitas() throws Exception
+    {
+    
+         Pacientes updateRegistro = new Pacientes();
+        updateRegistro.setIdPacientes(Integer.parseInt((String) table.getValueAt(table.getSelectedRow(), 0)));
+        updateRegistro.setName((String) table.getValueAt(table.getSelectedRow(), 1));
+        updateRegistro.setTelefono((String) table.getValueAt(table.getSelectedRow(), 2));
+        updateRegistro.setDireccion((String) table.getValueAt(table.getSelectedRow(), 3));
+        updateRegistro.setFechanacimiento((String) table.getValueAt(table.getSelectedRow(), 4));
+        
+        
+         new ConsultoriosView(updateRegistro).setVisible(true);
     }
 
 }

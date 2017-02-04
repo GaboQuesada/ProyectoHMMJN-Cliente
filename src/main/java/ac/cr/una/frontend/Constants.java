@@ -34,9 +34,9 @@ public class Constants {
     public static final String WS_CONSULTORIOS_GETALL = "http://localhost:8180/ProyectoServer/rest/consultorios/all";
     
     //CITAS WEBSERVICE
-    public static final String WS_CITAS_GETALL = "http://localhost:8180/ProyectoServer/rest/consultorios/all";
-    public static final String WS_CITAS_GETALLBYID ="http://localhost:8180/ProyectoServer/rest/observaciones/allByid";
-    public static final String WS_CITAS_UPDATE = "http://localhost:8180/ProyectoServer/rest/enfermedades/update";
-    public static final String WS_CITAS_SAVE = "http://localhost:8180/ProyectoServer/rest/usuarios/";
+    public static final String WS_CITAS_GETALL = "http://localhost:8180/ProyectoServer/rest/citas/all";
+    public static final String WS_CITAS_GETALLBYID ="http://localhost:8180/ProyectoServer/rest/citas/allByid";
+    public static final String WS_CITAS_UPDATE = "http://localhost:8180/ProyectoServer/rest/citas/update";
+    public static final String WS_CITAS_SAVE = "http://localhost:8180/ProyectoServer/rest/citas/";
 
 }

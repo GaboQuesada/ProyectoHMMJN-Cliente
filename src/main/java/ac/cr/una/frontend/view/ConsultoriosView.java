@@ -2,18 +2,27 @@
 package ac.cr.una.frontend.view;
 
 import ac.cr.una.frontend.controller.ConsultorioController;
+import ac.cr.una.frontend.model.Pacientes;
 
 
 
 
 public class ConsultoriosView extends javax.swing.JFrame {
-
-    public ConsultoriosView() throws Exception {
+ private Pacientes pacientes;
+ 
+ 
+    public ConsultoriosView(Pacientes pacientes) throws Exception {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.pacientes = pacientes;
         
-       ConsultorioController controller = new ConsultorioController(Table);
+       ConsultorioController controller = new ConsultorioController(Table, btnAgregar, btnSelecionar, btnconfirmar, combodia, tablacitas, txthora, this.pacientes);
+       btnAgregar.addActionListener(controller);
+       btnSelecionar.addActionListener(controller);
+       btnconfirmar.addActionListener(controller);
     }
+
+  
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -53,7 +62,7 @@ public class ConsultoriosView extends javax.swing.JFrame {
 
         jLabel3.setText("Día:");
 
-        combodia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combodia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes   CIMA", "Martes  CIMA", "Jueves  Centro M del Este", "Viernes  Centro M del Este" }));
 
         jLabel4.setText("Hora:");
 

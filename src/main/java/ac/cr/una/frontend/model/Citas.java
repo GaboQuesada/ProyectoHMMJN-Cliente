@@ -14,15 +14,15 @@ import java.util.Objects;
  */
 public class Citas {
 
-    @JsonProperty("idObservaciones")
+    @JsonProperty("idCita")
     private int idCita;
-    @JsonProperty("idObservaciones")
+    @JsonProperty("idPaciente")
     private Pacientes idPaciente;
-    @JsonProperty("idObservaciones")
+    @JsonProperty("dia")
     private String dia;
-    @JsonProperty("idObservaciones")
+    @JsonProperty("hora")
     private String hora;
-    @JsonProperty("idObservaciones")
+    @JsonProperty("consultorio")
     private String consultorio;
 
     public Citas() {

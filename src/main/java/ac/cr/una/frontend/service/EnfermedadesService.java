@@ -16,9 +16,11 @@ public class EnfermedadesService {
       //GET
 
     
-     public Object[][] loadStudentsObjWrapper(int id) throws JsonGenerationException, JsonMappingException, IOException, Exception {
+     public EnfermedadesService() {
+    }
 
-       Enfermedades[] students = loadJsonFromWebService(id);
+    public Object[][] loadStudentsObjWrapper(int id) throws JsonGenerationException, JsonMappingException, IOException, Exception {
+        Enfermedades[] students = loadJsonFromWebService(id);
         Object[][] data = null;
 
         if (students != null && students.length > 0) {
