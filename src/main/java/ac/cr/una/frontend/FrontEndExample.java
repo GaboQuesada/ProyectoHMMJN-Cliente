@@ -2,6 +2,7 @@
 package ac.cr.una.frontend;
 
 import ac.cr.una.frontend.view.PacientesView;
+import ac.cr.una.frontend.view.PrincipalMenu;
 import ac.cr.una.frontend.view.UsuarioView;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -32,7 +33,7 @@ public class FrontEndExample {
 
   
     public static void createAndShowGUI() throws Exception {
-       new PacientesView().setVisible(true);
+       new PrincipalMenu().setVisible(true);
      //  new UsuarioView().setVisible(true);
     }
 }

@@ -3,6 +3,8 @@ package ac.cr.una.frontend.controller;
 import ac.cr.una.frontend.Constants;
 import ac.cr.una.frontend.model.Pacientes;
 import ac.cr.una.frontend.service.PacientesService;
+import ac.cr.una.frontend.view.ConsultoriosView;
+import ac.cr.una.frontend.view.InfoPacientes;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +27,8 @@ public class PacientesController implements ActionListener {
     private JButton btneditar;
     private JButton btneliminar;
     private JButton btninfo;
+    private JButton btnCitas;
+    private JButton btnConsultorios;
     private JTable table;
     private JTextField txtBuscar;
     private JTextField txtdireccion;
@@ -34,8 +38,10 @@ public class PacientesController implements ActionListener {
     private PacientesService usuarioService;
     private Object[][] usuarios;
 
-    public PacientesController(JButton BtnAgregar, JButton BtnBuscarAll, JButton BtnLimpiar, JButton btnBuscar, JButton btnVolver, JButton btneditar, JButton btneliminar, JButton btninfo, JTable table, JTextField txtBuscar, JTextField txtdireccion, JTextField txtfechanacimiento, JTextField txtnombre, JTextField txttelefono) throws Exception {
+    public PacientesController(JButton btnCitas,JButton btnConsultorios,JButton BtnAgregar, JButton BtnBuscarAll, JButton BtnLimpiar, JButton btnBuscar, JButton btnVolver, JButton btneditar, JButton btneliminar, JButton btninfo, JTable table, JTextField txtBuscar, JTextField txtdireccion, JTextField txtfechanacimiento, JTextField txtnombre, JTextField txttelefono) throws Exception {
         super();
+        this.btnCitas = btnCitas;
+        this.btnConsultorios = btnConsultorios;
         this.BtnAgregar = BtnAgregar;
         this.BtnBuscarAll = BtnBuscarAll;
         this.BtnLimpiar = BtnLimpiar;
@@ -57,6 +63,22 @@ public class PacientesController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if(btnConsultorios.equals(e.getSource())){
+        
+            try {
+                new ConsultoriosView().setVisible(true);
+            } catch (Exception ex) {
+                Logger.getLogger(PacientesController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if (btninfo.equals(e.getSource())) { try {
+            verinfo();
+            } catch (Exception ex) {
+                Logger.getLogger(PacientesController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
+        
         if (BtnBuscarAll.equals(e.getSource())) {
             try {
                 cargarTabla();
@@ -149,6 +171,21 @@ public class PacientesController implements ActionListener {
         limpiarTabla();
         cargarTabla();
 
+    }
+    
+    public void verinfo() throws Exception
+    {
+    
+        Pacientes updateRegistro = new Pacientes();
+        updateRegistro.setIdPacientes(Integer.parseInt((String) table.getValueAt(table.getSelectedRow(), 0)));
+        updateRegistro.setName((String) table.getValueAt(table.getSelectedRow(), 1));
+        updateRegistro.setTelefono((String) table.getValueAt(table.getSelectedRow(), 2));
+        updateRegistro.setDireccion((String) table.getValueAt(table.getSelectedRow(), 3));
+        updateRegistro.setFechanacimiento((String) table.getValueAt(table.getSelectedRow(), 4));
+        
+        InfoPacientes nuevo = new InfoPacientes(updateRegistro);
+        nuevo.setVisible(true);
+    
     }
 
 }

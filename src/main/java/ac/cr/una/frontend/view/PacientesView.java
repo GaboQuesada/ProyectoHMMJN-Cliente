@@ -9,7 +9,7 @@ public class PacientesView extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
-        PacientesController controller = new PacientesController(BtnAgregar, BtnBuscarAll, BtnLimpiar, btnBuscar, btnVolver, btneditar, btneliminar, btninfo, table, txtBuscar, txtdireccion, txtfechanacimiento, txtnombre, txttelefono);
+        PacientesController controller = new PacientesController(btnCitas,btnConsultorios,BtnAgregar, BtnBuscarAll, BtnLimpiar, btnBuscar, btnVolver, btneditar, btneliminar, btninfo, table, txtBuscar, txtdireccion, txtfechanacimiento, txtnombre, txttelefono);
         BtnAgregar.addActionListener(controller);
         BtnBuscarAll.addActionListener(controller);
         BtnLimpiar.addActionListener(controller);
@@ -18,6 +18,8 @@ public class PacientesView extends javax.swing.JFrame {
         btneditar.addActionListener(controller);
         btneliminar.addActionListener(controller);
         btninfo.addActionListener(controller);
+        btnCitas.addActionListener(controller);
+        btnConsultorios.addActionListener(controller);
 
     }
 
@@ -49,8 +51,10 @@ public class PacientesView extends javax.swing.JFrame {
         btneditar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnConsultorios = new javax.swing.JButton();
+        btnCitas = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -197,30 +201,46 @@ public class PacientesView extends javax.swing.JFrame {
 
         jLabel2.setText("MANTENIMIENTO DE PACIENTE");
 
+        btnConsultorios.setText("Agendar Cita");
+
+        btnCitas.setText("Ver todas las citas ");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCitas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConsultorios)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(27, 27, 27)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConsultorios)
+                            .addComponent(btnCitas))
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -254,6 +274,8 @@ public class PacientesView extends javax.swing.JFrame {
     private javax.swing.JButton BtnBuscarAll;
     private javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCitas;
+    private javax.swing.JButton btnConsultorios;
     private javax.swing.JButton btnVolver;
     private javax.swing.JButton btneditar;
     private javax.swing.JButton btneliminar;
